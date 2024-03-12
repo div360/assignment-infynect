@@ -1,0 +1,18 @@
+<tr class="text-[1rem] my-[3rem]">
+    <td class="px-[2rem] text-white">{{ todo.sno }}</td>
+    <td class="px-[2rem] text-white">{{ todo.taskname }}</td>
+    <td class="px-[2rem] text-white">{{ todo.priority }}</td>
+    <td class="px-[2rem] text-white">{{ todo.startDate }}</td>
+    <td class="px-[2rem] text-white">{{ todo.endDate }}</td>
+    <td class="px-[2rem] text-white">{{ todo.status }}</td>
+    <td class="px-[2rem] text-white">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Edit
+        </button>
+    </td>
+    <td class="px-[2rem]">
+        <button class="bg-green-500 hover:bg-green-700 text-white text-sm py-1 px-3 font rounded" (click)="onClick(todo)">
+            Mark as done
+        </button>
+    </td>
+</tr>

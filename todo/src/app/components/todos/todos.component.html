@@ -1,0 +1,39 @@
+<div class="w-[100vw] flex justify-center">
+    <app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
+</div>
+<div class="w-[100vw] flex justify-center mt-16">
+    <div class="flex">
+        <table>
+            <!-- Table headers -->
+            <tr class="text-white text-[1.1rem]">
+                <th class="px-[2rem] font-semibold">S.No</th>
+                <th class="px-[2rem] font-semibold">Task Name</th>
+                <th class="px-[2rem] font-semibold">Priority</th>
+                <th class="px-[2rem] font-semibold">Start Date</th>
+                <th class="px-[2rem] font-semibold">End Date</th>
+                <th class="px-[2rem] font-semibold">Status</th>
+                <th class="px-[2rem] font-semibold">Edit</th>
+                <th class="px-[2rem] font-semibold">Done</th>
+            </tr>
+            <!-- Todo items -->
+            <ng-container *ngFor="let todo of todos; let i = index">
+                <tr class="text-[1rem] my-[3rem]">
+                    <td class="px-[2rem] text-white">{{ todo.sno }}</td>
+                    <td class="px-[2rem] text-white">{{ todo.taskname }}</td>
+                    <td class="px-[2rem] text-white">{{ todo.priority }}</td>
+                    <td class="px-[2rem] text-white">{{ todo.startDate }}</td>
+                    <td class="px-[2rem] text-white">{{ todo.endDate }}</td>
+                    <td class="px-[2rem] text-white">{{ todo.status }}</td>
+                    <td class="px-[2rem] text-white">
+                        <app-edit-todo></app-edit-todo>
+                    </td>
+                    <td class="px-[2rem]">
+                        <button class="bg-green-500 hover:bg-green-700 text-white text-sm py-1 px-3 font rounded" (click)="onClick(todo)">
+                            Mark as done
+                        </button>
+                    </td>
+                </tr>
+            </ng-container>
+        </table>
+    </div>
+</div>
